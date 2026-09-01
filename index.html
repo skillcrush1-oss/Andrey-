@@ -150,16 +150,13 @@ section{position:relative;padding:58px 24px;border-bottom:1px solid var(--line)}
 </div>
 
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add('on')
+}),{threshold:.12});
 
-document.getElementById('rsvpForm').addEventListener('submit',e=>{
-e.preventDefault();
-const f=new FormData(e.target);
-const text=`Свадьба Андрея и Анастасии%0A%0AИмя: ${encodeURIComponent(f.get('name'))}%0AУчастие: ${encodeURIComponent(f.get('attendance'))}%0AПара: ${encodeURIComponent(f.get('plusone'))}%0AКомментарий: ${encodeURIComponent(f.get('comment')||'—')}`;
-document.getElementById('rsvpStatus').innerHTML='Готово! Сейчас подключим к этой форме ваш способ получения ответов.';
-// Replace the next line with your final RSVP endpoint or VK/Telegram contact link.
-});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 </script>
+
 </body>
 </html>
